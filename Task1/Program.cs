@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Shapes.Interfaces
+namespace Task1
 {
-    interface IShape
+    class Program
     {
-            double CalculateSquare();
-            double CalculatePerimeter();
+        static void Main(string[] args)
+        {
+        }
     }
 }
