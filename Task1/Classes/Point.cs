@@ -11,7 +11,7 @@ namespace Shapes.Classes
     /// geometric figures.
     //  Must define x and y dot's and calculate distanse between points
     /// </summary>
-    class Point
+    public class Point
     {
         public int x { get; set; }
         public int y { get; set; }

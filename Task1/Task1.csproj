@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Classes\Circle.cs" />
     <Compile Include="Classes\Point.cs" />
+    <Compile Include="Classes\Square.cs" />
     <Compile Include="Interfaces\IFileManager.cs" />
     <Compile Include="Interfaces\IShape.cs" />
     <Compile Include="Program.cs" />
