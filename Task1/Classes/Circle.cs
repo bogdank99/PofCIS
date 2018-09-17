@@ -13,6 +13,7 @@ namespace Shapes.Classes
     {   
         public Point center { get; set; }
         public int radius { get; set; }
+        public List<Point> pointsList = new List<Point>();
 
         public Circle()
         {
@@ -46,11 +47,20 @@ namespace Shapes.Classes
                     var x = int.Parse((bufferObjectData[1]));
                     var y = int.Parse((bufferObjectData[2]));
                     var radius = int.Parse((bufferObjectData[3]));
-                    return (new Circle(new Point(x,y),radius));
+                    Point point = new Point(x,y);
+                    Circle circle = new Circle(new Point(x, y), radius);
+                    circle.pointsList.Add(point);
+                    return circle;
         }
 
-        public void WriteToFile(string filePath)
+        public List<Point> GetPointsList()
         {
+            return pointsList;
+        }
+        public void WriteToFile(StreamWriter sw)
+        {
+            sw.WriteLineAsync(this.ToString());
+            sw.Close();
 
         }
     }

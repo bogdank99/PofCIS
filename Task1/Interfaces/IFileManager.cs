@@ -5,7 +5,7 @@ namespace Shapes.Interfaces
 {
     public interface IFileManager
     {
-        void WriteToFile(string FilePath);
-        IShape ReadFromFile(string dataString);
+        void WriteToFile(StreamWriter sw);
+        IShape ReadFromFile(string path);
     }
 }

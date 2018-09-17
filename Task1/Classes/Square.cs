@@ -9,6 +9,7 @@ namespace Shapes.Classes
     {
         public Point UpperLeft { get; set; }
         public Point LowerRight { get; set; }
+        private List<Point> pointsList = new List<Point>();
 
         public Square()
         {
@@ -22,10 +23,10 @@ namespace Shapes.Classes
 
         public override string ToString()
         {
-            return $"Square:     ({this.LowerRight.x},{this.LowerRight.y})  " +
-                   $"({this.UpperLeft.x},{this.UpperLeft.y}) " +
-                   $"square : {this.CalculateSquare().ToString("0.00")}  perimeter : {this.CalculatePerimeter().ToString("0.00")}";
-
+            return $"Square:     ({this.UpperLeft.x},{this.UpperLeft.y})  " +
+                   $"({this.LowerRight.x},{this.LowerRight.y}) " +
+                   $"square : {this.CalculateSquare().ToString("0.00")}  " +
+                   $"perimeter : {this.CalculatePerimeter().ToString("0.00")}";
         }
         /// <summary>
         /// We have upperLeft Point and lowerRight
@@ -56,6 +57,12 @@ namespace Shapes.Classes
             return Math.Pow(squareSide, 2);
         }
 
+        public List<Point> GetPointsList()
+        {
+            return this.pointsList;
+        }
+
+
         public IShape ReadFromFile(string dataLine)
         {
              var bufferObjectData = dataLine.Split(' ');
@@ -66,11 +73,20 @@ namespace Shapes.Classes
 
              Point p1 = new Point(x1,y1);
              Point p2 = new Point(x2,y2);
-             return new Square(p1,p2);
+
+
+             Square square = new Square(p1,p2);
+             square.pointsList.Add(p1);
+             square.pointsList.Add(p2);
+
+            return square;
         }
 
-        public void WriteToFile(string path)
+        public void WriteToFile(StreamWriter sw)
         {
+            sw.WriteLineAsync(this.ToString());
+            sw.Close();
+        }
 
         }
     }

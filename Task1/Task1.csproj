@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BL\Logic.cs" />
     <Compile Include="Classes\Circle.cs" />
     <Compile Include="Classes\Point.cs" />
     <Compile Include="Classes\Square.cs" />
@@ -57,6 +58,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Data\data.txt" />
+    <Content Include="Data\file1.txt" />
+    <Content Include="Data\file2.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
