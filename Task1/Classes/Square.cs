@@ -1,17 +1,31 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.IO;
 using Shapes.Interfaces;
 
 namespace Shapes.Classes
 {
-    public class Square:IShape
+    public class Square: IShape,IFileManager
     {
         public Point UpperLeft { get; set; }
         public Point LowerRight { get; set; }
 
-       public Square(Point upperLeft, Point lowerRight)
+        public Square()
+        {
+
+        }
+        public Square(Point upperLeft, Point lowerRight)
         {
             this.UpperLeft = upperLeft;
             this.LowerRight = lowerRight;
+        }
+
+        public override string ToString()
+        {
+            return $"Square:     ({this.LowerRight.x},{this.LowerRight.y})  " +
+                   $"({this.UpperLeft.x},{this.UpperLeft.y}) " +
+                   $"square : {this.CalculateSquare().ToString("0.00")}  perimeter : {this.CalculatePerimeter().ToString("0.00")}";
+
         }
         /// <summary>
         /// We have upperLeft Point and lowerRight
@@ -40,6 +54,24 @@ namespace Shapes.Classes
         {
             var squareSide = Math.Sqrt(2) * Point.CalculateDistanseBetweenPoints(UpperLeft, LowerRight);
             return Math.Pow(squareSide, 2);
+        }
+
+        public IShape ReadFromFile(string dataLine)
+        {
+             var bufferObjectData = dataLine.Split(' ');
+             var x1 = int.Parse((bufferObjectData[1]));
+             var y1 = int.Parse((bufferObjectData[2]));
+             var x2 = int.Parse((bufferObjectData[3]));
+             var y2 = int.Parse((bufferObjectData[4]));
+
+             Point p1 = new Point(x1,y1);
+             Point p2 = new Point(x2,y2);
+             return new Square(p1,p2);
+        }
+
+        public void WriteToFile(string path)
+        {
+
         }
     }
 }

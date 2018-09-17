@@ -1,8 +1,11 @@
-﻿namespace Shapes.Interfaces
+﻿using System.Collections.Generic;
+using System.IO;
+
+namespace Shapes.Interfaces
 {
-    interface IFileManager
+    public interface IFileManager
     {
         void WriteToFile(string FilePath);
-        bool ReadFromFile(string FilePath);
+        IShape ReadFromFile(string dataString);
     }
 }

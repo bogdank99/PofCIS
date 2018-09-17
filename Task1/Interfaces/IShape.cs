@@ -1,6 +1,6 @@
 ﻿namespace Shapes.Interfaces
 {
-    interface IShape
+    public interface IShape
     {
         double CalculateSquare();
         double CalculatePerimeter();
