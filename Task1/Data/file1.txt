@@ -1,0 +1,7 @@
+Shapes sorted by perimeter(Ascending):
+Triangle:   (-5,-3)  (-1,-4) (-5,-6) square : 6,00  perimeter : 11,60
+Triangle:   (7,4)  (1,4) (6,3) square : 3,00  perimeter : 12,51
+Circle:     (-1,-1)  radius: 3 square : 28,27  perimeter : 18,85
+Circle:     (1,1)  radius: 3 square : 28,27  perimeter : 18,85
+Square:     (-2,-2)  (-5,-10) square : 146,00  perimeter : 48,33
+Circle:     (1,8)  radius: 14 square : 615,75  perimeter : 87,96

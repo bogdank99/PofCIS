@@ -16,6 +16,8 @@ namespace Task1
         static void Main(string[] args)
         {
             Logic logic = new Logic();
+            Console.WriteLine("Program worked well.Press any key to exit");
+            Console.ReadKey();
         }
     }
 }

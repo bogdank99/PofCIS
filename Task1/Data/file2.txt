@@ -1,3 +1,4 @@
 Figures from 3rd quarter sorted by perimeter(Descending):
 Square:     (-2,-2)  (-5,-10) square : 146,00  perimeter : 48,33
 Circle:     (-1,-1)  radius: 3 square : 28,27  perimeter : 18,85
+Triangle:   (-5,-3)  (-1,-4) (-5,-6) square : 6,00  perimeter : 11,60

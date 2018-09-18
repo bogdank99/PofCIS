@@ -23,7 +23,7 @@ namespace Task1.BL
         }
         static List<string> getDataFromFile()
         {
-            StreamReader sr = new StreamReader("E://LNU//Proga//PofCIS//Task1//Task1//Data//data.txt");
+            StreamReader sr = new StreamReader("C://Users//Bohdan//Desktop//PofCIS//Task1//Data//data.txt");
             //Contains list of "raw" strings that have data about figures
             List<string> dataList = new List<string>();
             while (!sr.EndOfStream)
@@ -67,12 +67,13 @@ namespace Task1.BL
         {
             var sortedList = listOfShapes.OrderByDescending(shape => shape.CalculatePerimeter());
             var list = sortedList.Reverse();
-            StreamWriter sw = new StreamWriter("E://LNU//Proga//PofCIS//Task1//Task1//Data//file1.txt",false,System.Text.Encoding.Default);
+            StreamWriter sw = new StreamWriter("C://Users//Bohdan//Desktop//PofCIS//Task1//Data//file1.txt", false,System.Text.Encoding.Default);
             sw.WriteLineAsync("Shapes sorted by perimeter(Ascending):");
             foreach (var shape in list)
             {
                 sw.WriteLineAsync(shape.ToString());
             }
+            sw.Close();
         }
 
         static bool isInThirdQuarter(IShape shape)
@@ -101,13 +102,12 @@ namespace Task1.BL
 
         void writeFiguresFromThirdQuarterToFile()
         {
-            StreamWriter sw = new StreamWriter("E://LNU//Proga//PofCIS//Task1//Task1//Data//file2.txt", false, System.Text.Encoding.Default);
+            StreamWriter sw = new StreamWriter("C://Users//Bohdan//Desktop//PofCIS//Task1//Data//file2.txt", false, System.Text.Encoding.Default);
             sw.WriteLineAsync("Figures from 3rd quarter sorted by perimeter(Descending):");
             var shapesFromThirdQuarter = getFiguresFromThirdQuarter();
             var sortedShapes = shapesFromThirdQuarter.OrderByDescending(shape => shape.CalculatePerimeter());
             foreach (var shape in sortedShapes)
             {
-                Console.WriteLine(shape.ToString());
                 sw.WriteLineAsync(shape.ToString());
             }
             sw.Close();
