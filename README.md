@@ -1,7 +1,7 @@
 ## Team - 8 (PMI-31)
 * [Bohdan Bondarets](https://github.com/bbondarets)
 * [Maksym Yaremko]
-* [Bohdan Karpenko]
+* [Bohdan Karpenko](https://github.com/bogdank99)
 
 **Варіант 1.**
 1) Визначити інтерфейс IShape з методами обчислення площі фігури, периметра фігури, інтерфейс IFileManager з методами введення-виведення з файлу. Класи Circle (координати центру та радіус) , Square (координати верхнього лівого кутка та нижнього правого кутка), та Triangle  реалізують ці інтерфейс. В текстовому файлі задані дані про геометричні фігури. 
